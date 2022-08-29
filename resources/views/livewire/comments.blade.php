@@ -21,7 +21,8 @@
                     @foreach($comments as $comment)
                         <div class="input-group mb-3 shadow"
                              style="border: 2px solid #8192a3 ; border-radius: 20px; padding: 10px">
-                            <h5>{{$comment['creator']}}</h5> <span class="my-1 mx-2"> {{$comment['created_at']}}</span><hr >
+                            <h5>{{$comment->user->name}}</h5>
+                            <span class="my-1 mx-2"> {{$comment->created_at->diffForHumans()}}</span><hr >
                             <h6>
                                 {{$comment['body']}}
                             </h6>

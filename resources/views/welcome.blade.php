@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:livewire="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,21 +8,21 @@
     <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <title>Livewire</title>
-    @livewireStyles
+    <livewire:styles />
 </head>
 
 <body>
+<livewire:comments  />
+<livewire:scripts />
 
-
-
-@livewire('comments')
-@livewireScripts
 
 <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+
+</script>
 
 </body>
 </html>
