@@ -18,15 +18,12 @@ class CreateCommentsTable extends Migration
             $table->string('comment');
             $table->string('image');
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            $table->unsignedBigInteger('support_ticket_id');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::dropIfExists('comments');

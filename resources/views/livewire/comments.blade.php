@@ -1,7 +1,9 @@
-<div class="align-items-center align-content-center mx-auto my-auto" style=" width: 500px"
+<div class="align-items-center align-content-center mx-auto col-6"
+
      xmlns:wire="http://www.w3.org/1999/xhtml">
-    <div class="align-items-center align-content-center" style=" position: relative;align-items: center;">
-        <div class="card" style="position: absolute;top: 50px">
+    <div class="align-items-center align-content-center"
+         style=" position: relative;align-items: center;">
+        <div class="card" style="position: absolute;">
             <div class="card-header text-center">
                 Add Comment
             </div>
@@ -60,7 +62,7 @@
                     </div>
                 @endforeach
 
-                {{$comments->links()}}
+
 
             </div>
 

@@ -17,12 +17,18 @@ class Comments extends Component
     use WithPagination;
     use WithFileUploads;
     protected $paginationTheme = 'bootstrap';
-    protected $listeners = ['fileUpload' => 'handelFileUploade'];
+
+
+    // listeners =======================================================
+    protected $listeners = [
+        'fileUpload' => 'handelFileUploade',
+        'ticketSelected'
+    ];
 
 
     // prams =======================================================
     //  public $comments = [];
-    public $theComment, $image;
+    public $theComment, $image ,$support_ticket = 1 ,$ticketId;
 
     public function handelFileUploade($imageData)
     {
@@ -44,6 +50,7 @@ class Comments extends Component
             'comment' => $this->theComment,
             'user_id' => 1,
             'image' => $image,
+            'support_ticket_id' => $this->support_ticket,
         ]);
 
         //  $this->comments->prepend ($createComment);
@@ -106,12 +113,19 @@ class Comments extends Component
 
     }
 
+    // function to select ticket comment
+
+    public  function ticketSelected($ticketId){
+       $this->ticketId = $ticketId;
+
+    }
 
     //function render =================================================
     public function render()
     {
         return view('livewire.comments', [
-            'comments' => Comment::latest()->paginate(2)
+            'comments' => Comment::where('support_ticket_id',$this->ticketId)
+                ->latest()->paginate(2)
         ]);
     }
 }

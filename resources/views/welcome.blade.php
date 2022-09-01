@@ -15,7 +15,8 @@
     <livewire:styles />
 </head>
 
-<body>
+<body class="row my-5">
+<livewire:tickets  />
 <livewire:comments  />
 <livewire:scripts />
 
